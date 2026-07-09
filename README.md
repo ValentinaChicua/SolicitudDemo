@@ -99,10 +99,12 @@ El servicio devuelve un objeto con esta informacion:
 
 1. El controlador recibe el JSON.
 2. El servicio arma las propiedades del contacto.
-3. El cliente de HubSpot busca por email.
-4. Si no existe, crea el contacto.
-5. Si existe, lo actualiza.
-6. El resultado se registra en consola.
+3. El cliente de HubSpot busca el contacto por correo electrónico.
+4. Si el contacto no existe, lo crea; si existe, actualiza su información.
+5. El servicio verifica si existe una empresa asociada al dominio del correo electrónico.
+6. Si la empresa no existe, la crea utilizando el nombre recibido en el campo `company` y el dominio del correo.
+7. El servicio asocia el contacto con la empresa correspondiente mediante la API de HubSpot.
+8. Finalmente, registra en consola el resultado de la operación.
 
 ## Consola
 
